@@ -19,23 +19,18 @@ string array[4];
 int i = 0;
 stringstream ssin(input);
 while (ssin.good() && i < 4){
-    ssin >> array[i];
-    ++i;
+  ssin >> array[i];
+  ++i;
 }
-
-Individual * binarystr1 = new Individual(array[0]);
-Individual * binarystr2 = new Individual(array[2]);
+Individual * binarystringvalue1 = new Individual(array[0]);
+Individual * binarystringvalue2 = new Individual(array[2]);
 int k1 = stoi(array[1]);
 int k2 = stoi(array[3]);
-
-Mutator * flip = new BitFlip();
-Mutator * rarng = new Rearrange();
-
-binarystr1 = flip -> mutate(binarystr1,k1);
-binarystr2 = rarng -> mutate(binarystr2, k2);
-
-cout<<binarystr1->getString()<<" "<<binarystr2->getString()<<" "<<binarystr2->getMaxOnes()<<endl;
-
+Mutator * flippedvalue = new BitFlip();
+Mutator * rearrangedvalue = new Rearrange();
+binarystringvalue1 = flippedvalue -> mutate(binarystringvalue1,k1);
+binarystringvalue2 = rearrangedvalue -> mutate(binarystringvalue2, k2);
+cout<<binarystringvalue1->getString()<<" "<<binarystringvalue2->getString()<<" "<<binarystringvalue2->getMaxOnes()<<endl;
 return 0;
 
 
